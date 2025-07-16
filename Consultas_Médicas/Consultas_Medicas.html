@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Med Record</title>
+    <link rel="stylesheet" href="Style_Consultas_Medicas.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <div class="logo-icon">⚕</div>
+            <div class="logo-text">Med Record</div>
+        </div>
+        <div class="user-info">
+            <div class="user-name">Carlos Rafael Ruiz Ruiz | 18 años</div>
+            <div>243703@ids.upchiapas.edu.mx</div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <div class="nav-item active" data-tab="consultas">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+            </svg>
+            <div class="nav-text">Consultas médicas</div>
+        </div>
+        <div class="nav-item" data-tab="medidas">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+                <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7.07,18.28C7.5,17.38 8.12,16.5 8.91,15.77C9.71,15.04 10.69,14.5 11.71,14.22C12.5,14.05 13.33,14 14.16,14C15.07,14 16,14.08 16.88,14.3C17.76,14.5 18.58,14.84 19.3,15.3C19.74,15.58 20.14,15.91 20.47,16.3C20.8,16.69 21.04,17.12 21.16,17.58C21.27,18.04 21.27,18.53 21.15,19.01C21.03,19.5 20.8,19.96 20.47,20.37C20.14,20.78 19.74,21.13 19.3,21.42C18.58,21.88 17.76,22.22 16.88,22.42C16,22.62 15.07,22.7 14.16,22.7C13.33,22.7 12.5,22.65 11.71,22.48C10.69,22.2 9.71,21.66 8.91,20.93C8.12,20.2 7.5,19.32 7.07,18.42V18.28Z"/>
+            </svg>
+            <div class="nav-text">Medidas corporales</div>
+        </div>
+        <div class="nav-item" data-tab="graficas">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+                <path d="M22,21H2V3H4V19H6V17H10V19H12V16H16V19H18V17H22V21Z"/>
+            </svg>
+            <div class="nav-text">Gráficas y estadísticas</div>
+        </div>
+        <div class="nav-item" data-tab="informacion">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+                <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+            </svg>
+            <div class="nav-text">Información personal</div>
+        </div>
+        <div class="nav-item" data-tab="historial">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+            </svg>
+            <div class="nav-text">Historial médico</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div id="consultas" class="tab-content active">
+            <div class="search-section">
+                <div class="search-box">
+                    <svg class="search-icon" viewBox="0 0 24 24">
+                        <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="Buscar registro">
+                </div>
+                <button class="new-record-btn" onclick="openModal()">
+                    <span>+</span>
+                    Crear un nuevo registro
+                </button>
+            </div>
+
+            <div class="records-list">
+                <div class="record-card">
+                    <div class="record-header">
+                        <div>
+                            <div class="record-title">Faringitis aguda</div>
+                            <div class="record-subtitle">Farmacias Similares</div>
+                            <div class="record-doctor">Dr. Luis Ramiro Acosta Estrada</div>
+                        </div>
+                        <div class="record-date">30/05/2025</div>
+                    </div>
+                    <div class="record-actions">
+                        <button class="action-btn">3 prescripciones</button>
+                        <button class="action-btn">3 medidas corporales</button>
+                        <button class="more-details">Más detalles ▼</button>
+                        <button class="more-details">⋮</button>
+                    </div>
+                </div>
+
+                <div class="record-card">
+                    <div class="record-header">
+                        <div>
+                            <div class="record-title">Faringitis aguda</div>
+                            <div class="record-subtitle">Farmacias Similares</div>
+                            <div class="record-doctor">Dr. Luis Ramiro Acosta Estrada</div>
+                        </div>
+                        <div class="record-date">30/05/2025</div>
+                    </div>
+                    <div class="record-actions">
+                        <button class="action-btn">3 prescripciones</button>
+                        <button class="action-btn">3 medidas corporales</button>
+                        <button class="more-details">Más detalles ▼</button>
+                        <button class="more-details">⋮</button>
+                    </div>
+                </div>
+
+                <div class="record-card">
+                    <div class="record-header">
+                        <div>
+                            <div class="record-title">Faringitis aguda</div>
+                            <div class="record-subtitle">Farmacias Similares</div>
+                            <div class="record-doctor">Dr. Luis Ramiro Acosta Estrada</div>
+                        </div>
+                        <div class="record-date">30/05/2025</div>
+                    </div>
+                    <div class="record-actions">
+                        <button class="action-btn">3 prescripciones</button>
+                        <button class="action-btn">3 medidas corporales</button>
+                        <button class="more-details">Más detalles ▼</button>
+                        <button class="more-details">⋮</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="medidas" class="tab-content">
+            <div class="empty-state">
+                <h3>Medidas corporales</h3>
+                <p>Aquí se mostrarán las medidas corporales registradas</p>
+            </div>
+        </div>
+
+        <div id="graficas" class="tab-content">
+            <div class="empty-state">
+                <h3>Gráficas y estadísticas</h3>
+                <p>Aquí se mostrarán las gráficas y estadísticas</p>
+            </div>
+        </div>
+
+        <div id="informacion" class="tab-content">
+            <div class="empty-state">
+                <h3>Información personal</h3>
+                <p>Aquí se mostrará la información personal</p>
+            </div>
+        </div>
+
+        <div id="historial" class="tab-content">
+            <div class="empty-state">
+                <h3>Historial médico</h3>
+                <p>Aquí se mostrará el historial médico completo</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="newRecordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Crear nuevo registro</div>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-nav">
+                <div class="modal-nav-item active" data-section="detalles">Detalles de la consulta</div>
+                <div class="modal-nav-item" data-section="medidas">Medidas corporales</div>
+                <div class="modal-nav-item" data-section="tratamiento">Tratamiento</div>
+            </div>
+            <div class="modal-body">
+                <!-- Sección 1: Detalles de la consulta -->
+                <div id="detalles" class="form-section active">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Diagnóstico</label>
+                            <input type="text" class="form-input" placeholder="Ingrese el diagnóstico">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Fecha de la consulta</label>
+                            <input type="date" class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Centro médico</label>
+                            <input type="text" class="form-input" placeholder="Nombre del centro médico">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Nombre del doctor</label>
+                            <input type="text" class="form-input" placeholder="Nombre completo del doctor">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 2: Medidas corporales -->
+                <div id="medidas" class="form-section">
+                    <div id="measurementsList">
+                        <div class="measurement-row">
+                            <div class="form-group">
+                                <label class="form-label">Medida corporal a registrar</label>
+                                <select class="form-input" placeholder="Ej: Peso, Altura, Presión arterial">
+                                    <option value="1">Peso</option>
+                                    <option value="2">Altura</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Valor registrado</label>
+                                <input type="text" class="form-input" placeholder="Ej: 70 kg, 1.75 m">
+                            </div>
+                            <button type="button" class="delete-btn" onclick="removeMeasurement(this)">🗑</button>
+                        </div>
+                        <div class="measurement-row">
+                            <div class="form-group">
+                                <label class="form-label">Medida corporal a registrar</label>
+                                <select class="form-input" placeholder="Ej: Peso, Altura, Presión arterial">
+                                    <option value="1">Peso</option>
+                                    <option value="2">Altura</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Valor registrado</label>
+                                <input type="text" class="form-input" placeholder="Ej: 70 kg, 1.75 m">
+                            </div>
+                            <button type="button" class="delete-btn" onclick="removeMeasurement(this)">🗑</button>
+                        </div>
+                    </div>
+                    <button type="button" class="add-btn" onclick="addMeasurement()">
+                        <span>+</span>
+                        Añadir medida corporal
+                    </button>
+                </div>
+
+                <!-- Sección 3: Tratamiento -->
+                <div id="tratamiento" class="form-section">
+                    <div id="medicationsList">
+                        <div class="medication-row">
+                            <div class="medication-header">
+                                <div class="form-group">
+                                    <label class="form-label">Nombre del medicamento</label>
+                                    <input type="text" class="form-input" placeholder="Nombre del medicamento">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Tipo de medicamento</label>
+                                    <input type="text" class="form-input" placeholder="Ej: Antibiótico, Analgésico">
+                                </div>
+                                <button type="button" class="delete-btn" onclick="removeMedication(this)">🗑</button>
+                            </div>
+                            <div class="medication-details">
+                                <div class="form-group">
+                                    <label class="form-label">Dosis</label>
+                                    <input type="text" class="form-input" placeholder="Ej: 500mg">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Tiempo entre dosis</label>
+                                    <input type="text" class="form-input" placeholder="Ej: Cada 8 horas">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Duración</label>
+                                    <input type="text" class="form-input" placeholder="Ej: 7 días">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="add-btn" onclick="addMedication()">
+                        <span>+</span>
+                        Añadir prescripción
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="previousSection()">Anterior</button>
+                <button type="button" class="btn-primary" onclick="nextSection()">Siguiente</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Variables globales
+        let currentSection = 0;
+        const sections = ['detalles', 'medidas', 'tratamiento'];
+
+        // Navegación principal
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // Remover clase active de todos los items
+                document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+                
+                // Añadir clase active al item clickeado
+                this.classList.add('active');
+                
+                // Mostrar el contenido correspondiente
+                const tabId = this.dataset.tab;
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Funciones del modal
+        function openModal() {
+            document.getElementById('newRecordModal').style.display = 'block';
+            currentSection = 0;
+            updateModalNavigation();
+        }
+
+        function closeModal() {
+            document.getElementById('newRecordModal').style.display = 'none';
+        }
+
+        // Navegación del modal
+        document.querySelectorAll('.modal-nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const sectionName = this.dataset.section;
+                currentSection = sections.indexOf(sectionName);
+                updateModalNavigation();
+            });
+        });
+
+        function updateModalNavigation() {
+            // Actualizar navegación
+            document.querySelectorAll('.modal-nav-item').forEach((item, index) => {
+                item.classList.toggle('active', index === currentSection);
+            });
+
+            // Actualizar secciones
+            document.querySelectorAll('.form-section').forEach((section, index) => {
+                section.classList.toggle('active', index === currentSection);
+            });
+
+            // Actualizar botones
+            const prevBtn = document.querySelector('.btn-secondary');
+            const nextBtn = document.querySelector('.btn-primary');
+            
+            prevBtn.style.display = currentSection === 0 ? 'none' : 'block';
+            nextBtn.textContent = currentSection === sections.length - 1 ? 'Guardar registro' : 'Siguiente';
+        }
+
+        function previousSection() {
+            if (currentSection > 0) {
+                currentSection--;
+                updateModalNavigation();
+            }
+        }
+
+        function nextSection() {
+            if (currentSection < sections.length - 1) {
+                currentSection++;
+                updateModalNavigation();
+            } else {
+                // Guardar registro
+                alert('Registro guardado exitosamente');
+                closeModal();
+            }
+        }
+
+        // Funciones para añadir/remover medidas corporales
+        function addMeasurement() {
+            const measurementsList = document.getElementById('measurementsList');
+            const newMeasurement = document.createElement('div');
+            newMeasurement.className = 'measurement-row';
+            newMeasurement.innerHTML = `
+                <div class="form-group">
+                    <label class="form-label">Medida corporal a registrar</label>
+                    <select class="form-input" placeholder="Ej: Peso, Altura, Presión arterial">
+                        <option value="1">Peso</option>
+                        <option value="2">Altura</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Valor registrado</label>
+                    <input type="text" class="form-input" placeholder="Ej: 70 kg, 1.75 m">
+                </div>
+                <button type="button" class="delete-btn" onclick="removeMeasurement(this)">🗑</button>
+            `;
+            measurementsList.appendChild(newMeasurement);
+        }
+
+        function removeMeasurement(button) {
+            button.parentElement.remove();
+        }
+
+        // Funciones para añadir/remover medicamentos
+        function addMedication() {
+            const medicationsList = document.getElementById('medicationsList');
+            const newMedication = document.createElement('div');
+            newMedication.className = 'medication-row';
+            newMedication.innerHTML = `
+                <div class="medication-header">
+                    <div class="form-group">
+                        <label class="form-label">Nombre del medicamento</label>
+                        <input type="text" class="form-input" placeholder="Nombre del medicamento">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tipo de medicamento</label>
+                        <input type="text" class="form-input" placeholder="Ej: Antibiótico, Analgésico">
+                    </div>
+                    <button type="button" class="delete-btn" onclick="removeMedication(this)">🗑</button>
+                </div>
+                <div class="medication-details">
+                    <div class="form-group">
+                        <label class="form-label">Dosis</label>
+                        <input type="text" class="form-input" placeholder="Ej: 500mg">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tiempo entre dosis</label>
+                        <input type="text" class="form-input" placeholder="Ej: Cada 8 horas">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Duración</label>
+                        <input type="text" class="form-input" placeholder="Ej: 7 días">
+                    </div>
+                </div>
+            `;
+            medicationsList.appendChild(newMedication);
+        }
+
+        function removeMedication(button) {
+            // Buscar el contenedor principal de la medicación (.medication-row)
+            const medicationRow = button.closest('.medication-row');
+            if (medicationRow) {
+                medicationRow.remove();
+            }
+        }
+
+        // Cerrar modal al hacer clic fuera de él
+        window.onclick = function(event) {
+            const modal = document.getElementById('newRecordModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Inicializar modal navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            updateModalNavigation();
+        });
+    </script>
+</body>
+</html>
